@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :devices
+
   get "home/home"
 
   root 'home#home'
