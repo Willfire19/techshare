@@ -12,6 +12,21 @@ RSpec.describe HomeController, :type => :controller do
 				expect(response).to be_success
 				expect(response.status).to eq(200)
 			end
+
+			let(:valid_attributes) {
+		    # skip("Add a hash of attributes valid for your model")
+		    { "name" => "Nexus 4" }
+  		}
+
+  		let(:valid_session) { {} }
+
+  		it "assigns 3 devices to @devices" do
+  			device = Device.create! valid_attributes
+  			device2 = Device.create! valid_attributes
+	      get :home, {}, valid_session
+	      expect(assigns(:devices)).to eq([device, device2])
+	    end
+
 		end
 
 		describe "Home route", :type => :feature do

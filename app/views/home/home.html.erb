@@ -11,6 +11,11 @@
 		</div>
 	</div>
 	<div class="row">
+		<% @devices.each do |device| %>
+			<%= render 'devices/device', :device => device %>
+		<% end %>
+	</div>
+	<div class="row">
 		<!-- <div class="panel panel-default">
 			<div class="panel-body"> -->
 				<div class="col-sm-4">

@@ -1,3 +1,17 @@
 // Place all the styles related to the Devices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.devices{
+	background-color: white;
+//	margin: ;
+//	margin-top: ;
+//	padding: ;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #777777;
+//	border-radius: 10px;
+	-moz-box-shadow: 0px 5px 0px #777777;
+	-webkit-box-shadow: 0px 5px 0px #777777;
+	box-shadow: 0px 5px 0px #777777;
+}
