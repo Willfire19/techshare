@@ -15,6 +15,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :availability %><br>
+    <%= f.select :availability, options_for_select([["Available", "Available"], ["Unavailable", "Unavailable"]]) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

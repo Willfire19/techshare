@@ -4,14 +4,21 @@
 
 .devices{
 	background-color: white;
-//	margin: ;
-//	margin-top: ;
-//	padding: ;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #777777;
-//	border-radius: 10px;
 	-moz-box-shadow: 0px 5px 0px #777777;
 	-webkit-box-shadow: 0px 5px 0px #777777;
 	box-shadow: 0px 5px 0px #777777;
+}
+
+.availability{
+	font-size: 150%;
+	background-color: green;
+	text-align: center;
+}
+
+.name{
+	text-align: center;
+	font-size: 150%;
 }

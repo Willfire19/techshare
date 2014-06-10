@@ -4,13 +4,16 @@ RSpec.describe "home/home", :type => :view do
   before(:each) do
     assign(:devices, [
       Device.create!(
-        :name => "Nexus 4"
+        :name => "Nexus 4",
+        :availability => "Available"
       ),
       Device.create!(
-        :name => "Nexus 4"
+        :name => "Nexus 4",
+        :availability => "Available"
       ),
       Device.create!(
-        :name => "Nexus 4"
+        :name => "Nexus 4",
+        :availability => "Available"
       )
     ])
   end

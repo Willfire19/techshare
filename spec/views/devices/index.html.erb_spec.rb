@@ -4,10 +4,12 @@ RSpec.describe "devices/index", :type => :view do
   before(:each) do
     assign(:devices, [
       Device.create!(
-        :name => "Nexus 4"
+        :name => "Nexus 4",
+        :availability => "Available"
       ),
       Device.create!(
-        :name => "Nexus 4"
+        :name => "Nexus 4",
+        :availability => "Available"
       )
     ])
   end
@@ -15,5 +17,6 @@ RSpec.describe "devices/index", :type => :view do
   it "renders a list of devices" do
     render
     assert_select "tr>td", :text => "Nexus 4".to_s, :count => 2
+    assert_select "tr>td", :text => "Available".to_s, :count => 2
   end
 end
