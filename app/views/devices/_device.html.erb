@@ -5,6 +5,12 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
+				<div class="image"><%= image_tag device.image_url(:device_container).to_s, :class => "style-image" if device.image?%>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
 				<div class="availability"><%= device.availability %></div>
 			</div>
 		</div>

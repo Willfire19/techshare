@@ -4,6 +4,15 @@
   <strong>Name:</strong>
   <%= @device.name %>
 </p>
+<p>
+  <strong>Availability:</strong>
+  <%= @device.availability %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @device.image_url(:device_container).to_s %>
+</p>
 
 <%= link_to 'Edit', edit_device_path(@device) %> |
 <%= link_to 'Back', devices_path %>
