@@ -11,6 +11,7 @@
 	//-webkit-box-shadow: 0px 5px 0px #777777;
 	//box-shadow: 5px 5px 5px #777777;
 	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 20px;
 }
 
 .availability{
@@ -22,9 +23,10 @@
 	border-style: solid;
 	border-width: 1px;
 	border-color: green;
-	border-radius: 10px;
+	border-radius: 20px;
 	margin-top: 10px;
 	color: white;
+	margin: 10px;
 }
 
 .available{
