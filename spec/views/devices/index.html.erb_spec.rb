@@ -5,11 +5,13 @@ RSpec.describe "devices/index", :type => :view do
     assign(:devices, [
       Device.create!(
         :name => "Nexus 4",
-        :availability => "Available"
+        :availability => "Available",
+        :user_id => 1
       ),
       Device.create!(
         :name => "Nexus 4",
-        :availability => "Available"
+        :availability => "Available",
+        :user_id => 1
       )
     ])
   end

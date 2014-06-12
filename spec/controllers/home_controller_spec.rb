@@ -16,7 +16,8 @@ RSpec.describe HomeController, :type => :controller do
 			let(:valid_attributes) {
 		    # skip("Add a hash of attributes valid for your model")
 		    { "name" => "Nexus 4",
-		      "availability" => "Available" }
+		      "availability" => "Available",
+		      "user_id" => 1 }
   		}
 
   		let(:valid_session) { {} }

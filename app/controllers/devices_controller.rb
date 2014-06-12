@@ -20,12 +20,15 @@ class DevicesController < ApplicationController
 
   # GET /devices/1/edit
   def edit
+    @device = Device.find(params[:id])
+    @device.user = current_user
   end
 
   # POST /devices
   # POST /devices.json
   def create
     @device = Device.new(device_params)
+    @device.user = current_user
 
     respond_to do |format|
       if @device.save
@@ -41,6 +44,9 @@ class DevicesController < ApplicationController
   # PATCH/PUT /devices/1
   # PATCH/PUT /devices/1.json
   def update
+    @device = Device.find(params[:id])
+    @device.user = current_user
+
     respond_to do |format|
       if @device.update(device_params)
         format.html { redirect_to @device, notice: 'Device was successfully updated.' }
@@ -70,6 +76,6 @@ class DevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
-      params.require(:device).permit(:name, :availability, :image)
+      params.require(:device).permit(:name, :availability, :image, :user_id)
     end
 end
