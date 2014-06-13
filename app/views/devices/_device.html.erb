@@ -1,17 +1,19 @@
-<div class="col-xs-6 col-sm-6 col-md-4">
+<div class="col-xs-6 col-sm-6 col-md-6">
 	<div class="devices">
 		<div class="row">
 			<div class="col-xs-12 name"><%= device.name %></div>
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="image"><%= image_tag device.image_url(:device_container).to_s, :class => "style-image" if device.image?%>
+				<div class="image"><%= image_tag device.image_url(:device_container).to_s, :class => "img-responsive" if device.image?%>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="availability"><%= device.availability %></div>
+				<!-- <button type="button" class="availability"><%= device.availability %></button> -->
+				<!-- <%= link_to device.availability, root_path, :class => "availability" %> -->
 			</div>
 		</div>
 	</div>

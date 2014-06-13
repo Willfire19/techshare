@@ -1,7 +1,7 @@
 <title>TechShare</title>
 
 <div class="row">
-	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+	<div class="col-xs-12 col-sm-10 col-sm-offset-1">
 		<div class="col-xs-12">
 			<h1>TechShare</h1>
 		</div>
@@ -11,22 +11,36 @@
 		</div>
 	</div>
 	<div class="row">
-		<% @devices.each do |device| %>
-			<%= render 'devices/device', :device => device %>
-		<% end %>
-	</div>
-	<div class="row">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<div class="info">
-					<div class="col-sm-4">
-						<p>Technology is very fun to develop and use, but they can be really expensive to buy at retail price. Instead of buying tech devices, you can just borrow them from people that are not using them currently</p>
-					</div>
-					<div class="col-sm-4">
-						<p>Have a tech device but don't have a need for it anymore? Instead of having it sit at home, just lend it out to someone that may want it!</p>
-					</div>
-					<div class="col-sm-4">
-						<p>Worried about having your device stolen or broken when it's away? Become a member, and you can make money for the devices you lend out AND get them insured with a low monthly payment!</p>
+		<div class="col-sm-4">
+			<div class="sign_up">
+				<h3>Need to borrow a tablet, camera, video camera, lenses, or even a mobile phone? TechShare wants to help you!</h3>
+				<!-- <button type="button" class="sign_up">Sign Up Here!</button> -->
+				<%= link_to "Sign Up Here!", sign_up_path, :class => "btn btn-primary btn-lg" %>
+				<% if user_signed_in? %>
+					<%= link_to "Sign Out Here!", destroy_user_session_path, :class => "btn btn-danger btn-lg", :method => :delete %>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="row">
+				<% @devices.each do |device| %>
+					<%= render 'devices/device', :device => device %>
+				<% end %>
+			</div>
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="info">
+							<div class="col-sm-4">
+								<p>Technology is very fun to develop and use, but they can be really expensive to buy at retail price. Instead of buying tech devices, you can just borrow them from people that are not using them currently</p>
+							</div>
+							<div class="col-sm-4">
+								<p>Have a tech device but don't have a need for it anymore? Instead of having it sit at home, just lend it out to someone that may want it!</p>
+							</div>
+							<div class="col-sm-4">
+								<p>Worried about having your device stolen or broken when it's away? Become a member, and you can make money for the devices you lend out AND get them insured with a low monthly payment!</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

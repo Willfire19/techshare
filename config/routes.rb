@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get "home/home"
 
   root 'home#home'
+
+  devise_scope :user do
+    get "sign_up", to: "devise/registrations#new"
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

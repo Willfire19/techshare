@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
 	def home
-		@devices = Device.last(3)
+		@devices = Device.last(2)
 	end
 
 end
