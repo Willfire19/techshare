@@ -13,11 +13,13 @@
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="sign_up">
-				<h3>Need to borrow a tablet, camera, video camera, lenses, or even a mobile phone? TechShare wants to help you!</h3>
-				<!-- <button type="button" class="sign_up">Sign Up Here!</button> -->
-				<%= link_to "Sign Up Here!", sign_up_path, :class => "btn btn-primary btn-lg" %>
+				<!-- <button type="button" class="sign_up">Sign Up Here!</button> -->				
 				<% if user_signed_in? %>
+					<h3>Thanks for Signing Up! Don't forget to check out our Facebook page and our Twitter!</h3>
 					<%= link_to "Sign Out Here!", destroy_user_session_path, :class => "btn btn-danger btn-lg", :method => :delete %>
+				<% else %>
+					<h3>Need to borrow a tablet, camera, video camera, lenses, or even a mobile phone? TechShare wants to help you!</h3>
+					<%= link_to "Sign Up Here!", sign_up_path, :class => "btn btn-primary btn-lg" %>
 				<% end %>
 			</div>
 		</div>
