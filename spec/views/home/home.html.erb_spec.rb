@@ -27,10 +27,5 @@ RSpec.describe "home/home", :type => :view do
     ])
   end
 
-  it "renders three devices" do
-    render
-    # assert_select "div.devices", :text => "Nexus 4".to_s, :count => 3
-    # assert_select "div div", :count => 3
-    assert_template :partial => '_device', :count => 3
-  end
+  
 end

@@ -7,26 +7,42 @@ RSpec.describe HomeController, :type => :controller do
 		subject{ page }
 
 		describe "Getting the home page" do
+
+			render_views
+
 			it "responds successfully" do
 				get :home
 				expect(response).to be_success
 				expect(response.status).to eq(200)
 			end
 
+			let(:user) { FactoryGirl.create(:user) }
+			before { sign_in user }
+
 			let(:valid_attributes) {
 		    # skip("Add a hash of attributes valid for your model")
 		    { "name" => "Nexus 4",
 		      "availability" => "Available",
-		      "user_id" => 1 }
+		      "user_id" => user.id }
   		}
 
   		let(:valid_session) { {} }
+  		
 
-  		it "assigns 3 devices to @devices" do
-  			device = Device.create! valid_attributes
-  			device2 = Device.create! valid_attributes
+  		it "assigns 2 devices to @devices" do
+  			device1 = Device.create! valid_attributes
+				device2 = Device.create! valid_attributes
 	      get :home, {}, valid_session
-	      expect(assigns(:devices)).to eq([device, device2])
+	      expect(assigns(:devices)).to eq([device1, device2])
+	    end
+
+	    it "renders the _devices partial twice" do
+
+	    	device1 = Device.create! valid_attributes
+  			device2 = Device.create! valid_attributes
+	    	# get :home, {}, valid_session
+	    	get :home, {}, valid_session
+	    	assert_template :partial => '_device', :count => 2
 	    end
 
 		end
