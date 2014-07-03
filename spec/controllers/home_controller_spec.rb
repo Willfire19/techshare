@@ -6,6 +6,18 @@ RSpec.describe HomeController, :type => :controller do
 
 		subject{ page }
 
+		describe "Getting the profile page" do
+
+			render_views
+
+			it "responds successfully" do
+				get :profile
+				expect(response).to be_success
+				expect(response.status).to eq(200)
+			end
+
+		end
+
 		describe "Getting the home page" do
 
 			render_views

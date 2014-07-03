@@ -47,10 +47,17 @@ RSpec.describe "Home Page" do
 				expect(page).to have_css('h3', :text => "Thanks for Signing Up! We are still setting things up, but we will email you when we are ready! Don't forget to check out our Facebook page and our Twitter!")
 			end
 		end
+
+		describe "Profile Page" do
+
+			before { visit profile_path }
+
+			it "should redirect back to home page" do
+				expect(current_path).to eq(root_path)
+			end
+
+		end
+
 	end
-
-		
-
-	# end
 	
 end

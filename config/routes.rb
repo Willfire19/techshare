@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :devices
 
   get "home/home"
-
+  get "home/profile"
+  match 'profile', to: 'home#profile', via: :all
+  match 'home', to: 'home#home', via: :all
   root 'home#home'
 
   devise_scope :user do
