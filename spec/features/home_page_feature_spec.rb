@@ -59,10 +59,41 @@ RSpec.describe "Home Page" do
 				expect(page).to have_css('h1', :text => "TechShare")
 				expect(page).to have_css('h3', :text => "Thanks for Signing Up! We are still setting things up, but we will email you when we are ready! Don't forget to check out our Facebook page and our Twitter!")
 			end
+
+			describe "home page" do
+				
+				before do
+					sign_in_user(user)
+					visit root_path
+				end
+
+				it "will not have a sign out link" do
+					expect(page).to_not have_link('Sign Out Here!') 
+				end
+
+			end
 		end
 
-		
+	end
+
+	describe "after signing up" do
+
+		before{ sign_in_user(user) }
+
+		describe "visiting the profile page" do
+
+			before{ visit profile_path }
+
+			it "will display the user's email address" do
+				expect(page).to have_css('h1', :text => user.email )
+			end
+
+			it "will have a link to sign out the user" do
+				expect(page).to have_link('Sign Out')
+			end
+
+		end
 
 	end
-	
+
 end

@@ -1,3 +1,5 @@
 </title>Profile</title>
 
 <h1><%= @user.email %></h1>
+
+<%= link_to "Sign Out", destroy_user_session_path, :class => "btn btn-danger btn-lg", :method => :delete %>
