@@ -32,6 +32,7 @@ gem 'spring',        group: :development
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
 gem 'devise'
 
 group :development, :test do
