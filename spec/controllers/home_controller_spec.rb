@@ -2,18 +2,32 @@ require 'rails_helper'
 
 RSpec.describe HomeController, :type => :controller do
 
+	describe "Profile:" do
+
+		subject{ page }
+
+		describe "Blah" do
+		end
+	end
+
 	describe "Home:" do
 
 		subject{ page }
 
 		describe "Getting the profile page" do
+			let(:user){ FactoryGirl.create(:user) }
+			before{ sign_out user }
 
-			render_views
+			describe "after signing up" do
 
-			it "responds successfully" do
-				get :profile
-				expect(response).to be_success
-				expect(response.status).to eq(200)
+				before{ sign_in user }
+
+				it "responds successfully" do
+					get :profile
+					expect(response).to be_success
+					expect(response.status).to eq(200)
+				end
+
 			end
 
 		end

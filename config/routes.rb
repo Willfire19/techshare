@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   root 'home#home'
 
   devise_scope :user do
-    get "sign_up", to: "devise/registrations#new"
+    get "signup", to: "devise/registrations#new"
+    get "signin", to: "devise/sessions#new"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

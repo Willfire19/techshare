@@ -4,6 +4,9 @@ RSpec.describe "Home Page" do
 
 	# describe "Home page", :type => :request do
 	let(:user) { FactoryGirl.create(:user) }
+	# before :each do
+	# 	sign_out :user
+	# end
 
 	describe "before signing up" do
 
@@ -11,12 +14,12 @@ RSpec.describe "Home Page" do
 
 		it "has a signup button" do
 			# assert_select ".btn-primary"
-			expect(page).to have_link('Sign Up Here!', href: sign_up_path)
+			expect(page).to have_link('Sign Up Here!', href: signup_path)
 		end
 
 		it "signup button goes to registration page" do
 			click_link "Sign Up Here!"
-			expect(current_path).to eq(sign_up_path)
+			expect(current_path).to eq(signup_path)
 			expect(page).to have_css( 'h2', :text => "Sign up")
 		end
 
@@ -31,10 +34,20 @@ RSpec.describe "Home Page" do
 
 		end
 
+		describe "visiting profile page" do
+
+				before { visit profile_path }
+
+				it "should redirect back to home page" do
+					expect(current_path).to eq(new_user_session_path)
+				end
+
+		end
+
 		describe "after going to sign up page" do
 
 			before do
-				visit sign_up_path
+				visit signup_path
 				fill_in "Email", with: "example@gmail.com"
 				fill_in "Password", with: user.password
 				fill_in "Password Confirmation", with: user.password_confirmation
@@ -48,15 +61,7 @@ RSpec.describe "Home Page" do
 			end
 		end
 
-		describe "Profile Page" do
-
-			before { visit profile_path }
-
-			it "should redirect back to home page" do
-				expect(current_path).to eq(root_path)
-			end
-
-		end
+		
 
 	end
 	
