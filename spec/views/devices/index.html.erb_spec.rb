@@ -23,7 +23,9 @@ RSpec.describe "devices/index", :type => :view do
 
   it "renders a list of devices" do
     render
-    assert_select "tr>td", :text => "Nexus 4".to_s, :count => 2
-    assert_select "tr>td", :text => "Available".to_s, :count => 2
+    expect(rendered).to have_content("Nexus 4", :count => 2)
+    expect(rendered).to have_content("Available", :count => 2)
+    # assert_select "name", :text => "Nexus 4".to_s, :count => 2
+    # assert_select "availability", :text => "Available".to_s, :count => 2
   end
 end

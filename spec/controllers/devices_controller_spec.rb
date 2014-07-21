@@ -55,6 +55,14 @@ RSpec.describe DevicesController, :type => :controller do
       expect(response.status).to eq(200)
     end
 
+    render_views
+    
+    it "renders the device partial" do
+      device = Device.create! valid_attributes
+      get :index, {}
+      expect(response).to render_template(:partial => '_device')
+    end
+
   end
 
   describe "GET show" do

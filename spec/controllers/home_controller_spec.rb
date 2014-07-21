@@ -68,7 +68,7 @@ RSpec.describe HomeController, :type => :controller do
   			device2 = Device.create! valid_attributes
 	    	# get :home, {}, valid_session
 	    	get :home, {}, valid_session
-	    	assert_template :partial => '_device', :count => 2
+	    	assert_template :partial => '_device_home', :count => 2
 	    end
 
 		end
