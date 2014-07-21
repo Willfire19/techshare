@@ -1,5 +1,9 @@
 </title>Profile</title>
 
-<h1><%= @user.email %></h1>
+<h1>User Email: <%= @user.email %></h1>
+
+<% if current_user.admin? %>
+	<h2>Number of Users Signed Up: <%= User.count %></h2>
+<% end %>
 
 <%= link_to "Sign Out", destroy_user_session_path, :class => "btn btn-danger btn-lg", :method => :delete %>
