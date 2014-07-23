@@ -1,12 +1,11 @@
 require 'rails_helper'
+# require 'pry'
 
 RSpec.describe "Home Page" do
 
-	# describe "Home page", :type => :request do
+	subject { page }
+
 	let(:user) { FactoryGirl.create(:user) }
-	# before :each do
-	# 	sign_out :user
-	# end
 
 	describe "before signing up" do
 
@@ -24,12 +23,28 @@ RSpec.describe "Home Page" do
 		end
 
 		describe "devices on home page:" do
-			let(:device1){ FactoryGirl.create(:device, user: user) }
-			let(:device2){ FactoryGirl.create(:device, user: user) }
+
+			before(:all) do
+				@user = FactoryGirl.create(:user)
+				@device1 = Device.create!(:name => "Nexus 4", :availability => "Available", :user => @user)
+			end
+
+			it "should be able to go to created device", :js => true do
+				visit device_path(@device1)
+				expect(page).to have_content( @device1.name )
+			end
 
 			it "devices should be valid" do
-				expect(device1).to be_valid
-				expect(device2).to be_valid
+				expect(@device1).to be_valid
+			end
+
+			it "devices should have a name", :js => true do
+				visit root_path
+				expect(page).to have_content( @device1.name )
+			end
+
+			after(:all) do
+				@user.destroy
 			end
 
 		end
