@@ -2,13 +2,12 @@
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
 		<%= render "device", :device => @device %>
-		<div class="row" style="padding:20px">
-			<div class="col-xs-6">
-				<%= link_to 'Edit', edit_device_path(@device), style: "color:white; font-size:150%" %>
+		<% if current_user == @device.user %>
+			<div class="row" style="padding:20px">
+				<div class="col-xs-12">
+					<%= link_to 'Edit', edit_device_path(@device), style: "color:white; font-size:150%" %>
+				</div>
 			</div>
-			<div class="col-xs-6">
-				<%= link_to 'Back', devices_path, style: "color:white; font-size:150%; float:right" %>
-			</div>
-		</div>
+		<% end %>
 	</div>
 </div>
