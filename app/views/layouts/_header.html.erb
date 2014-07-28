@@ -20,7 +20,7 @@
 					<% if user_signed_in? %>
 						<li class="<%= 'active' if current_page?(profile_path) %>"><%= link_to "Profile", profile_path %></li>
 						<li class="<%= 'active' if current_page?(new_device_path(current_user)) %>"><%= link_to "Add Device", new_device_path(current_user) %></li>
-						<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+						<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
 					<% else %>
 						<li class="<%= 'active' if current_page?(signin_path) %>"><%= link_to "Sign in", signin_path %></li>
 					<% end %>
