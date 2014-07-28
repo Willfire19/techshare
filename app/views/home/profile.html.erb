@@ -5,5 +5,56 @@
 <% if current_user.admin? %>
 	<h2>Number of Users Signed Up: <%= User.count %></h2>
 <% end %>
+<div class="row" style="padding-top:30px">
+	<div class="col-xs-12 col-sm-6">
+		<h1>How to Be a Borrower</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="info">
+				<div class="col-sm-4">
+					<h2>Step 1</h2>
+					<p style="font-size: 20px;line-height: 1.25em">Find a Device on the <%= link_to 'Devices Page', devices_path, :class => "btn btn-primary btn-lg" %>.</p>
+				</div>
+				<div class="col-sm-4">
+					<h2>Step 2</h2>
+					<p style="font-size: 20px;line-height: 1.25em">Email the owner of the device to request the device.</p>
+				</div>
+				<div class="col-sm-4">
+					<h2>Step 3</h2>
+					<p style="font-size: 20px;line-height: 1.25em">Discuss with the owner how you will get the device, then retrieve it.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row" style="padding-top:30px">
+	<div class="col-xs-12 col-sm-6">
+		<h1>How to Be a Lender</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="info">
+				<div class="col-sm-4">
+					<h2>Step 1</h2>
+					<p style="font-size: 20px;line-height: 1.25em">Go to <%= link_to 'Add A Device', new_device_path, :class => "btn btn-primary btn-lg" %>.</p>
+				</div>
+				<div class="col-sm-4">
+					<h2>Step 2</h2>
+					<p style="font-size: 20px;line-height: 1.25em">Fill in the form to add your device to your account.</p>
+				</div>
+				<div class="col-sm-4">
+					<h2>Step 3</h2>
+					<p style="font-size: 20px;line-height: 1.25em">Wait until someone requests to borrow your device.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- <%= link_to "Sign Out", destroy_user_session_path, :class => "btn btn-danger btn-lg", :method => :delete %> -->
