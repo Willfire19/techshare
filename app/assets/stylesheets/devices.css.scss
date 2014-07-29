@@ -49,8 +49,24 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 	text-align: center;
-	color: white;
 	font-size: 150%;
+
+	a:link{
+		color: white;
+	}
+
+	a:visited{
+		color:white;
+	}
+
+	a:hover{
+		color:white;
+		background-color: transparent;
+	}
+
+	a:active{
+		color:white;
+	}
 }
 
 .image{
