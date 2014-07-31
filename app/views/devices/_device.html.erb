@@ -8,12 +8,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="device_email">Contact: <%= device.user.email %></div>
-			
-		</div>
-	</div>
+	<% if params[:action] == 'show' %>
+		<% if user_signed_in? %>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="device_email">Contact: <%= device.user.email %></div>
+					
+				</div>
+			</div>
+		<% end %>
+	<% end %>
 	<div class="row">
 		<div class="col-xs-12">
 			<!-- <div class="availability"><%= device.availability %></div> -->
