@@ -4,12 +4,24 @@
 
 @import "bootstrap";
 
+/*
 html, body {
 	background: url("public-domain-images-free-high-resolution-quality-photos-unsplash-0188.jpg") no-repeat center center fixed;
+	//opacity: 0.7;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	background-color: rgba(0, 0, 0, 0.50);
+	padding-top: 50px;
+}
+*/
+
+html{
+	background-color: #9B9C8E;
+}
+
+body{
 	padding-top: 50px;
 }
 
