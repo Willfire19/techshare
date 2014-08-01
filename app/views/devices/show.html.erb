@@ -2,10 +2,13 @@
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
 		<%= render "device", :device => @device %>
-		<% if current_user == @device.user %>
+		<% if user_signed_in? && (current_user == @device.user || current_user.admin?) %>
 			<div class="row" style="padding:20px">
-				<div class="col-xs-12">
+				<div class="col-xs-6">
 					<%= link_to 'Edit', edit_device_path(@device), style: "color:white; font-size:150%" %>
+				</div>
+				<div class="col-xs-6">
+					<%= link_to 'Remove', device_path(@device), method: :delete, data: { confirm: "Are you sure you want to remove this device?" }, title: @device.name, style: "color:white; font-size:150%; float: right" %>
 				</div>
 			</div>
 		<% end %>
