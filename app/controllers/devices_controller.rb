@@ -16,12 +16,13 @@ class DevicesController < ApplicationController
   # GET /devices/new
   def new
     @device = Device.new
+    @user = current_user
   end
 
   # GET /devices/1/edit
   def edit
     @device = Device.find(params[:id])
-    @device.user = current_user
+    @user = @device.user
   end
 
   # POST /devices
@@ -45,7 +46,6 @@ class DevicesController < ApplicationController
   # PATCH/PUT /devices/1.json
   def update
     @device = Device.find(params[:id])
-    @device.user = current_user
 
     respond_to do |format|
       if @device.update(device_params)
