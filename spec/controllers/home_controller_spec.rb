@@ -49,7 +49,8 @@ RSpec.describe HomeController, :type => :controller do
 		    # skip("Add a hash of attributes valid for your model")
 		    { "name" => "Nexus 4",
 		      "availability" => "Available",
-		      "user_id" => user.id }
+		      "user_id" => user.id,
+		      "contact_email" => user.email }
   		}
 
   		let(:valid_session) { {} }
@@ -68,7 +69,7 @@ RSpec.describe HomeController, :type => :controller do
   			device2 = Device.create! valid_attributes
 	    	# get :home, {}, valid_session
 	    	get :home, {}, valid_session
-	    	assert_template :partial => '_device_home', :count => 2
+	    	assert_template :partial => '_device', :count => 2
 	    end
 
 		end

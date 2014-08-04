@@ -88,10 +88,6 @@ RSpec.describe "Home Page" do
 				expect(page).to have_css('h1', :text => user.email )
 			end
 
-			it "will have a link to sign out the user" do
-				expect(page).to have_link('Sign Out')
-			end
-
 		end
 
 	end

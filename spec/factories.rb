@@ -15,6 +15,7 @@ FactoryGirl.define  do
 		name "Nexus 5"
 		availability "Available"
 		user
+		contact_email "test@example.com"
 	end
 
 end
