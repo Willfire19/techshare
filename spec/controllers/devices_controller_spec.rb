@@ -25,11 +25,11 @@ RSpec.describe DevicesController, :type => :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) {
     # skip("Add a hash of attributes valid for your model")
-    { "name" => "Nexus 4", "availability" => "Available", "user_id" => 1 }
+    { "name" => "Nexus 4", "availability" => "Available", "user_id" => 1, "contact_email" => "test@example.com" }
   }
 
   let(:invalid_attributes) {
-    { "name" => "nope", "user_id" => nil}
+    { "name" => "nope", "user_id" => nil, "contact_email" => nil}
   }
 
   let(:user){ FactoryGirl.create(:user) }

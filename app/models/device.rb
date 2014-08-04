@@ -7,5 +7,6 @@ class Device < ActiveRecord::Base
 									 length: { minimum: 5 }
 	validates :availability, presence: true
 	validates :user_id, presence: true
+	validates :contact_email, presence: true
 	# validates :image, presence: true
 end

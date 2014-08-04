@@ -5,7 +5,8 @@ RSpec.describe "devices/show", :type => :view do
     @device = assign(:device, Device.create!(
       :name => "Nexus 4",
       :availability => true,
-      :user_id => 1
+      :user_id => 1,
+      :contact_email => "test@example.com"
     ))
   end
 

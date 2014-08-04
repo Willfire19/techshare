@@ -9,7 +9,8 @@ RSpec.describe "devices/edit", :type => :view do
       :name => "MyString",
       :availability => true,
       # :user_id => 1
-      :user => user
+      :user => user,
+      :contact_email => user.email
     ))
   end
 
